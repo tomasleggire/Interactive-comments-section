@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Comment from './COMPONENTS/Comment';
 import './CSS/App.css';
 
 const YOU = 'juliusomo';
@@ -43,6 +44,7 @@ function App() {
   return (
     <div className='main-app'>
       <p>HOLA</p>
+      <Comment />
     </div>
   );
 }
