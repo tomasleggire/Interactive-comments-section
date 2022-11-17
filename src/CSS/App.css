@@ -1,11 +1,11 @@
 .main-app {
-  background-color: rgb(235, 233, 233);
-  max-width: 1000px;
+  max-width: 750px;
   min-height: auto;
   margin: auto;
   margin-top: 54px;
   margin-bottom: 44px;
-  outline: auto;
+  border-radius: 10px;
+  background-color: rgb(239, 240, 235);
 }
 
 @media only screen and (max-width: 700px) {

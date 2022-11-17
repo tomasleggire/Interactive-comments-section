@@ -1,3 +1,61 @@
-.p {
-    font-size: 22px;
+.main-comment {
+    width: 100%;
+    height: 200px; /*Despues poner en auto */
+    display: flex;
+    flex-direction: row;
 }
+
+.main-comment-contador {
+    height: 100%;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-contador {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: rgb(129, 129, 199);
+}
+
+.btn-contador:hover {
+    color: rgb(55, 55, 156);
+}
+
+.span-contador {
+    padding: 8px 0;
+    color: rgb(81, 81, 168);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.contador {
+    width: 35px;
+    height: 120px;
+    background-color: rgb(229, 226, 226);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-comment-info {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+@media only screen and (max-width: 700px) {
+    .main-comment {
+        flex-direction: column;
+    }
+    .main-comment-contador {
+        order: 2;
+    }
+    .main-comment-info {
+        order: 1;
+    }
+  }
