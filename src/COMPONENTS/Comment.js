@@ -5,10 +5,13 @@ import {FaMinus} from "react-icons/fa";
 import {FaReply} from "react-icons/fa";
 
 
-export default function Comment({YOU, user, date, contador, msg, img, replies}) {
+export default function Comment({YOUname, YOUimg, user, date, contador, msg, img, replies}) {
+
+    const [replyModalValue, setReplyModalValue] = useState(false);
 
 
     return (
+        <>
         <div className="main-comment">
             <div className="main-comment-contador">
                 <div className="contador">
@@ -26,7 +29,7 @@ export default function Comment({YOU, user, date, contador, msg, img, replies}) 
                     <p className="user-date">{date}</p>
                     <div className="user-reply">
                         <FaReply className="reply-icon"/>
-                        <p className="reply-p">Reply</p>
+                        <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
                     </div>
                 </div>
                 <div className="main-comment-info-msg">
@@ -34,5 +37,19 @@ export default function Comment({YOU, user, date, contador, msg, img, replies}) 
                 </div>
             </div>
         </div>
+
+        {replyModalValue && (
+            <div className="main-reply">
+                <div className='photo-reply'>
+                        <img src={YOUimg} />
+                </div>
+                <input type='text' className="input-reply"/>
+                <div className="main-reply-btn">
+                  <button type="button" className="btn-reply">REPLY</button>
+                  <button type="button" className="btn-cancel" onClick={()=> setReplyModalValue(false)}>Cancel</button>
+                </div>
+            </div>
+        )}
+        </>
     )
 }

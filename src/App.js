@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import Comment from './COMPONENTS/Comment';
 import amyrobsonIMG from './IMAGES/image-amyrobson.png';
+import juliusomoIMG from './IMAGES/image-juliusomo.png';
 import './CSS/App.css';
 
-const YOU = 'juliusomo';
-const YOU_IMG = './IMAGES/image-juliusomo.png';
+const YOU = {
+  name: 'juliusomo',
+  img: juliusomoIMG,
+};
 
 function App() {
 
@@ -13,7 +16,7 @@ function App() {
       user: 'amyrobson',
       date: '1 month ago',
       contador: 12,
-      msg: `Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakp Though it seems the drag feature could be improved. But overall  Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoit looks incredible. You've nailed the design and the responsiveness at various breakpooints works really well.`,
+      msg: `Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.`,
       img: amyrobsonIMG,
       replies: [], 
     },
@@ -47,7 +50,8 @@ function App() {
       {state.map(function(user) {
         return (
           <Comment
-            YOU={YOU}
+            YOUname={YOU.name}
+            YOUimg={YOU.img}
             user={user.user}
             date={user.date}
             contador={user.contador}

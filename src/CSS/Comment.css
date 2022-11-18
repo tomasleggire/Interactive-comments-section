@@ -1,3 +1,4 @@
+
 .main-comment {
     width: 100%;
     height: auto;
@@ -5,6 +6,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: rgb(239, 240, 235);
+    border-radius: 10px;
 }
 
 .main-comment-contador {
@@ -100,9 +103,70 @@
     padding-right: 15px;
     padding-left: 5px;
     padding-bottom: 25px;
+    font-size: 18px;
 }
 
+/* COMMENTS MODAL  */
 
+.main-reply {
+    width: 100%;
+    height: auto;
+    background-color: rgb(239, 240, 235);
+    margin-top: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.photo-reply {
+    width: 52px;
+    height: 52px;
+    margin: 0 18px;
+}
+
+.input-reply {
+    width: 100%;
+    background-color: rgb(239, 240, 235);
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main-reply-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-reply {
+    background: none;
+    border: none;
+    background-color: rgb(81, 81, 168);
+    color: rgb(239, 240, 235);
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.btn-reply:hover {
+    background-color: rgb(129, 129, 199);
+    color: rgb(255, 255, 255);
+}
+
+.btn-cancel {
+    border: none;
+    background: none;
+    font-weight: 700;
+    margin: 0 20px;
+    cursor: pointer;
+    color: rgb(240, 26, 26);
+    margin-top: 18px;
+}
 
 /* @media only screen and (max-width: 700px) {
     .main-comment {
