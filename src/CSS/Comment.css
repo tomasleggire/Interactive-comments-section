@@ -1,8 +1,10 @@
 .main-comment {
     width: 100%;
-    height: 180px; /*Despues poner en auto */
+    height: auto;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-comment-contador {
@@ -52,14 +54,54 @@
     height: 50px;
     display: flex;
     align-items: center;
-    background-color: red;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-left: 5px;
 }
 
 .user-photo {
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
     margin-right: 10px;
 }
+
+.user-name {
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.user-date {
+    color: gray;
+}
+
+.user-reply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 auto;
+    margin-right: 25px;
+    cursor: pointer;
+    color: rgb(81, 81, 168);
+}
+
+.user-reply:hover {
+    color: rgb(129, 129, 199);
+}
+
+.reply-icon {
+    margin-right: 5px;
+}
+.reply-p {   
+    font-weight: 700;
+}
+
+.main-comment-info-msg {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 5px;
+    padding-bottom: 25px;
+}
+
 
 
 /* @media only screen and (max-width: 700px) {

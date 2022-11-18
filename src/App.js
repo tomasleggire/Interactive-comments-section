@@ -13,7 +13,7 @@ function App() {
       user: 'amyrobson',
       date: '1 month ago',
       contador: 12,
-      msg: `Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.`,
+      msg: `Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakp Though it seems the drag feature could be improved. But overall  Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoit looks incredible. You've nailed the design and the responsiveness at various breakpooints works really well.`,
       img: amyrobsonIMG,
       replies: [], 
     },

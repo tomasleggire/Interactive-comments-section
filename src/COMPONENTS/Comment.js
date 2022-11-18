@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import '../CSS/Comment.css';
 import {FaPlus} from "react-icons/fa";
 import {FaMinus} from "react-icons/fa";
+import {FaReply} from "react-icons/fa";
 
 
 export default function Comment({YOU, user, date, contador, msg, img, replies}) {
@@ -23,8 +24,14 @@ export default function Comment({YOU, user, date, contador, msg, img, replies}) 
                     </div>
                     <p className="user-name">{user}</p>
                     <p className="user-date">{date}</p>
+                    <div className="user-reply">
+                        <FaReply className="reply-icon"/>
+                        <p className="reply-p">Reply</p>
+                    </div>
                 </div>
-                <div className="main-comment-info-msg"></div>
+                <div className="main-comment-info-msg">
+                    <p className="msg">{msg}</p>
+                </div>
             </div>
         </div>
     )
