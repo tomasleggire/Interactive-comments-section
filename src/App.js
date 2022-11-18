@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Comment from './COMPONENTS/Comment';
+import amyrobsonIMG from './IMAGES/image-amyrobson.png';
 import './CSS/App.css';
 
 const YOU = 'juliusomo';
@@ -13,7 +14,7 @@ function App() {
       date: '1 month ago',
       contador: 12,
       msg: `Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.`,
-      img: './IMAGES/image-amyrobson.png',
+      img: amyrobsonIMG,
       replies: [], 
     },
     // {
