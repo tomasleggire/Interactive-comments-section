@@ -11,7 +11,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
 
 
     return (
-        <>
+        <div className="main">
         <div className="main-comment">
             <div className="main-comment-contador">
                 <div className="contador">
@@ -54,6 +54,6 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                 </div>
             </form>
         )}
-        </>
+        </div>
     )
 }
