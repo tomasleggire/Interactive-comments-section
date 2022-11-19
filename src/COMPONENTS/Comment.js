@@ -19,6 +19,10 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                     <span className="span-contador">{contador}</span>
                     <button className="btn-contador"><FaMinus /></button>
                 </div>
+                <div className="user-reply mobile">
+                    <FaReply className="reply-icon"/>
+                    <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
+                </div>
             </div>
             <div className="main-comment-info">
                 <div className="main-comment-info-user">
@@ -27,7 +31,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                     </div>
                     <p className="user-name">{user}</p>
                     <p className="user-date">{date}</p>
-                    <div className="user-reply">
+                    <div className="user-reply desktop">
                         <FaReply className="reply-icon"/>
                         <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
                     </div>
