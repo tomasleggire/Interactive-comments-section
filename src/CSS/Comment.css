@@ -196,6 +196,8 @@
     }
     .mobile {
         display: flex;
+        margin: 0 0 0 auto;
+        padding-right: 5px;
     }
     .main-comment-contador {
         display: flex;
@@ -212,5 +214,45 @@
         width: 100px;
         padding: 0 5px;
         height: 40px;
+    }
+    .span-contador {
+        margin-bottom: 4px;
+    }
+  }
+
+  @media only screen and (max-width: 530px) {
+    .main-reply {
+        flex-wrap: wrap;
+        padding: 12px 0;
+    } 
+    .photo-reply {
+        order: 2;
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    .input-reply {
+        order: 1;
+        width: 100%;
+        margin: 0 10px;
+        height: 80px;
+    }
+    .main-reply-btn {
+        order: 3;
+        flex-direction: row;
+        align-items: center;
+        align-items: center;
+        margin-right: 15px;
+        padding-top: 18px;
+    }
+    .btn-reply {
+        padding: 10px 20px;
+        margin: 0;
+        order: 2;
+    }
+    .btn-cancel {
+        margin: 0;
+        order: 1;
+        margin-right: 18px;
     }
   }

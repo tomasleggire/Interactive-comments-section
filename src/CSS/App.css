@@ -1,5 +1,6 @@
 .main-app {
   max-width: 750px;
+  min-width: 258px;
   min-height: auto;
   margin: auto;
   margin-top: 54px;
