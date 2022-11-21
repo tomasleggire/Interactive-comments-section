@@ -1,18 +1,16 @@
 import React, {useState} from "react";
 import '../CSS/Comment.css';
+import '../CSS/Replies.css';
 import {FaPlus} from "react-icons/fa";
 import {FaMinus} from "react-icons/fa";
 import {FaReply} from "react-icons/fa";
-import Replies from "./Replies";
 
-
-export default function Comment({YOUname, YOUimg, user, date, contador, msg, img, replies, Sumar, Restar}) {
+export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
-
-
+    
     return (
-        <div className="main">
+        <div className="main replies-child">
         <div className="main-comment">
             <div className="main-comment-contador">
                 <div className="contador">
@@ -42,31 +40,6 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                 </div>
             </div>
         </div>
-
-        {!!replies.length && (
-          <div className="replies-main">
-            <div className="replies-main-bar">
-                <div className="bar"></div>
-            </div>
-            <div className="replies-main-list">
-              {replies.map(function(user) {
-                return (
-                    <Replies
-                        user={user.user}
-                        date={user.date}
-                        contador={user.contador}
-                        msg={user.msg}
-                        img={user.img}
-                        Sumar={Sumar}
-                        Restar={Restar}
-                        YOUimg={YOUimg}
-                        YOUname={YOUname}
-                    />
-                )
-              })}
-            </div>
-          </div>
-        )}
 
         {replyModalValue && (
             <form className="main-reply">

@@ -260,3 +260,21 @@
         margin-right: 18px;
     }
   }
+
+.replies-main {
+    display: flex;
+}
+
+.replies-main-bar {
+    width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.bar {
+    width: 3px;
+    height: auto;
+    background-color: lightgray;
+}
