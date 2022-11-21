@@ -47,6 +47,30 @@ function App() {
     }
   ])
 
+  const Sumar = (typeNum, msg, contador) => {
+    if(typeNum === 1) {
+      let index = state.findIndex((user) => user.msg === msg);
+      let newListado = [...state];
+      newListado[index].contador = newListado[index].contador + 1;
+      console.log(newListado[index].contador);
+      setState(newListado);
+    } else {
+      console.log('lol');
+    }
+  }
+
+  const Restar = (typeNum, msg, contador) => {
+    if(typeNum === 1 && contador) {
+      let index = state.findIndex((user) => user.msg === msg);
+      let newListado = [...state];
+      newListado[index].contador = newListado[index].contador - 1;
+      console.log(newListado[index].contador);
+      setState(newListado);
+    } else {
+      console.log('lol');
+    }
+  }
+
   return (
     <div className='main-app'>
       {state.map(function(user) {
@@ -60,6 +84,8 @@ function App() {
             msg={user.msg}
             img={user.img}
             replies={user.replies}
+            Sumar={Sumar}
+            Restar={Restar}
           />
         )
       })}
