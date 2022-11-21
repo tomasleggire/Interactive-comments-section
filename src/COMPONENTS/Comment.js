@@ -16,7 +16,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
         <div className="main-comment">
             <div className="main-comment-contador">
                 <div className="contador">
-                    <button className="btn-contador" onClick={()=> Sumar(1, msg, contador)}><FaPlus /></button>
+                    <button className="btn-contador" onClick={()=> Sumar(1, msg)}><FaPlus /></button>
                     <span className="span-contador">{contador}</span>
                     <button className="btn-contador" onClick={()=> Restar(1, msg, contador)}><FaMinus /></button>
                 </div>
@@ -52,6 +52,8 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
               {replies.map(function(user) {
                 return (
                     <Replies
+                        userName={user}
+                        userMsg={msg}
                         user={user.user}
                         date={user.date}
                         contador={user.contador}

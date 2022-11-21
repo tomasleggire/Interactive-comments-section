@@ -47,7 +47,7 @@ function App() {
     }
   ])
 
-  const Sumar = (typeNum, msg, contador) => {
+  const Sumar = (typeNum, msg, userMsg, userName) => {
     if(typeNum === 1) {
       let index = state.findIndex((user) => user.msg === msg);
       let newListado = [...state];
@@ -55,19 +55,29 @@ function App() {
       console.log(newListado[index].contador);
       setState(newListado);
     } else {
-      console.log('lol');
+      let newListado = [...state];
+      let index = state.findIndex((user) => user.msg === userMsg);
+      let indexReply = newListado[index].replies.findIndex((user) => user.msg === userName.msg);
+      newListado[index].replies[indexReply].contador = newListado[index].replies[indexReply].contador + 1;
+      console.log(newListado[index].replies[indexReply].contador);
+      setState(newListado);
     }
   }
 
-  const Restar = (typeNum, msg, contador) => {
+  const Restar = (typeNum, msg, contador, userMsg, userName) => {
     if(typeNum === 1 && contador) {
       let index = state.findIndex((user) => user.msg === msg);
       let newListado = [...state];
       newListado[index].contador = newListado[index].contador - 1;
       console.log(newListado[index].contador);
       setState(newListado);
-    } else {
-      console.log('lol');
+    } else if (typeNum === 2 && contador) {
+      let newListado = [...state];
+      let index = state.findIndex((user) => user.msg === userMsg);
+      let indexReply = newListado[index].replies.findIndex((user) => user.msg === userName.msg);
+      newListado[index].replies[indexReply].contador = newListado[index].replies[indexReply].contador - 1;
+      console.log(newListado[index].replies[indexReply].contador);
+      setState(newListado);
     }
   }
 

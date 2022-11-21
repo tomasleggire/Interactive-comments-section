@@ -5,7 +5,7 @@ import {FaPlus} from "react-icons/fa";
 import {FaMinus} from "react-icons/fa";
 import {FaReply} from "react-icons/fa";
 
-export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar}) {
+export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
     
@@ -14,9 +14,9 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
         <div className="main-comment">
             <div className="main-comment-contador">
                 <div className="contador">
-                    <button className="btn-contador" onClick={()=> Sumar(1, msg, contador)}><FaPlus /></button>
+                    <button className="btn-contador" onClick={()=> Sumar(2, msg, userMsg, userName)}><FaPlus /></button>
                     <span className="span-contador">{contador}</span>
-                    <button className="btn-contador" onClick={()=> Restar(1, msg, contador)}><FaMinus /></button>
+                    <button className="btn-contador" onClick={()=> Restar(2, msg, contador, userMsg, userName)}><FaMinus /></button>
                 </div>
                 <div className="user-reply mobile">
                     <FaReply className="reply-icon"/>
