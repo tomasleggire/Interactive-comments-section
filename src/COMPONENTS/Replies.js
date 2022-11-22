@@ -4,6 +4,8 @@ import '../CSS/Replies.css';
 import {FaPlus} from "react-icons/fa";
 import {FaMinus} from "react-icons/fa";
 import {FaReply} from "react-icons/fa";
+import {FaPen} from "react-icons/fa";
+import {FaTrash} from "react-icons/fa";
 
 export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg}) {
 
@@ -29,11 +31,26 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                         <img src={img} />
                     </div>
                     <p className="user-name">{user}</p>
+                    {(user === YOUname) && <p className="you">you</p>}
                     <p className="user-date">{date}</p>
-                    <div className="user-reply desktop">
-                        <FaReply className="reply-icon"/>
-                        <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
+                    {user === YOUname ? 
+                    (<div className="desktop you-btn-main">    
+                        <div className="you-btn btn-delete">
+                            <FaTrash className="reply-icon"/>
+                            <p className="reply-p">Delete</p>
+                        </div>
+                        <div className="you-btn btn-edit">
+                            <FaPen className="reply-icon"/>
+                            <p className="reply-p">Edit</p>
+                        </div>
                     </div>
+                    ) 
+                    : 
+                    (<div className="user-reply desktop">    
+                    <FaReply className="reply-icon"/>
+                    <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
+                    </div>)
+                    }
                 </div>
                 <div className="main-comment-info-msg">
                     <p className="msg">{msg}</p>

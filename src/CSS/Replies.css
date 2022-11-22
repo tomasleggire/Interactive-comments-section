@@ -1,3 +1,45 @@
 .replies-child {
     margin: 5px 0;
 }
+
+.you {
+    background-color: rgb(81, 81, 168);
+    color: white;
+    padding: 0px 6px;
+    padding-bottom: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.you-btn-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 auto;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.you-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-delete {
+    color: rgb(240, 26, 26);
+    margin-right: 15px;
+}
+
+.btn-delete:hover {
+    color: rgb(236, 122, 122);
+}
+
+.btn-edit {
+    color: rgb(81, 81, 168);
+}
+
+.btn-edit:hover {
+    color: rgb(129, 129, 199);
+}
