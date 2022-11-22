@@ -21,6 +21,10 @@
     cursor: pointer;
 }
 
+.mobile-you {
+    display: none;
+}
+
 .you-btn {
     display: flex;
     justify-content: center;
@@ -42,4 +46,14 @@
 
 .btn-edit:hover {
     color: rgb(129, 129, 199);
+}
+
+@media only screen and (max-width: 530px) {
+    .desktop-you {
+        display: none;
+    }
+    .mobile-you {
+        display: flex;
+        margin-right: 10px;
+    }
 }

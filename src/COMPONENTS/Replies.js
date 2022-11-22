@@ -20,10 +20,24 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                     <span className="span-contador">{contador}</span>
                     <button className="btn-contador" onClick={()=> Restar(2, msg, contador, userMsg, userName)}><FaMinus /></button>
                 </div>
-                <div className="user-reply mobile">
+                {!(user === YOUname) && (
+                    <div className="user-reply mobile">
                     <FaReply className="reply-icon"/>
                     <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
+                    </div>
+                )}
+                {(user === YOUname) && (
+                    <div className="desktop you-btn-main mobile-you">
+                    <div className="you-btn btn-delete">
+                        <FaTrash className="reply-icon"/>
+                        <p className="reply-p">Delete</p>
+                    </div>
+                    <div className="you-btn btn-edit">
+                        <FaPen className="reply-icon"/>
+                        <p className="reply-p">Edit</p>
+                    </div>
                 </div>
+                )}
             </div>
             <div className="main-comment-info">
                 <div className="main-comment-info-user">
@@ -34,7 +48,7 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                     {(user === YOUname) && <p className="you">you</p>}
                     <p className="user-date">{date}</p>
                     {user === YOUname ? 
-                    (<div className="desktop you-btn-main">    
+                    (<div className="desktop you-btn-main desktop-you">
                         <div className="you-btn btn-delete">
                             <FaTrash className="reply-icon"/>
                             <p className="reply-p">Delete</p>
