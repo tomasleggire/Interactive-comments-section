@@ -75,7 +75,7 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
         {replyModalValue && (
             <form className="main-reply">
                 <div className='photo-reply'>
-                        <img src={YOUimg} />
+                    <img src={YOUimg} />
                 </div>
                 <textarea type='text' className="input-reply" placeholder="Add a comment..." autoFocus='on'/>
                 <div className="main-reply-btn">
