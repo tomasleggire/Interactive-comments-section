@@ -44,14 +44,6 @@ function App() {
           img: juliusomoIMG,
         }
       ], 
-    },
-    {
-      user: 'juliusomo',
-      date: '2 days ago',
-      contador: 2,
-      msg: `I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.`,
-      img: juliusomoIMG,
-      replies: [],
     }
   ])
 
@@ -107,6 +99,15 @@ function App() {
           />
         )
       })}
+      <form className="main-reply">
+        <div className='photo-reply'>
+          <img src={YOU.img} />
+        </div>
+        <textarea type='text' className="input-reply" placeholder="Add a comment..."/>
+        <div className="main-reply-btn">
+          <button type="button" className="btn-reply">SEND</button>
+        </div>
+      </form>
     </div>
   );
 }

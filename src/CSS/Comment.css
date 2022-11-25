@@ -142,6 +142,7 @@
     cursor: pointer;
     resize: none;
     padding: 10px;
+    font-size: 16px;
 }
 
 .main-reply-btn {
