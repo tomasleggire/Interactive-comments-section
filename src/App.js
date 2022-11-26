@@ -94,7 +94,7 @@ function App() {
     }
     let newListado = [...state];
     if (msg) {
-      newListado.unshift(post);
+      newListado.push(post);
       setState(newListado);
     }
   }
@@ -117,7 +117,7 @@ function App() {
           />
         )
       })}
-      <form className="main-reply">
+      <form className="main-reply new-post">
         <div className='photo-reply'>
           <img src={YOU.img} />
         </div>

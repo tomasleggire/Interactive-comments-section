@@ -74,6 +74,19 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
             </div>
         </div>
 
+        {replyModalValue && (
+            <form className="main-reply">
+                <div className='photo-reply'>
+                  <img src={YOUimg} />
+                </div>
+                <textarea type='text' className="input-reply" placeholder="Add a comment..." autoFocus='on'/>
+                <div className="main-reply-btn">
+                  <button type="button" className="btn-reply">REPLY</button>
+                  <button type="button" className="btn-cancel" onClick={()=> setReplyModalValue(false)}>Cancel</button>
+                </div>
+            </form>
+        )}
+
         {!!replies.length && (
           <div className="replies-main">
             <div className="replies-main-bar">
@@ -99,19 +112,6 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
               })}
             </div>
           </div>
-        )}
-
-        {replyModalValue && (
-            <form className="main-reply">
-                <div className='photo-reply'>
-                  <img src={YOUimg} />
-                </div>
-                <textarea type='text' className="input-reply" placeholder="Add a comment..." autoFocus='on'/>
-                <div className="main-reply-btn">
-                  <button type="button" className="btn-reply">REPLY</button>
-                  <button type="button" className="btn-cancel" onClick={()=> setReplyModalValue(false)}>Cancel</button>
-                </div>
-            </form>
         )}
         </div>
     )
