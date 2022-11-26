@@ -1,16 +1,18 @@
 .main {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 .main-comment {
     width: 100%;
     min-width: 258px;
     height: auto;
+    min-height: 170px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: rgb(239, 240, 235);
     border-radius: 10px;
+
 }
 
 .main-comment-contador {
@@ -62,7 +64,6 @@
     align-items: center;
     padding-top: 40px;
     padding-bottom: 30px;
-    margin-left: 5px;
 }
 
 .user-photo {

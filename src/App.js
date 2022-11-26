@@ -13,6 +13,8 @@ const YOU = {
 
 function App() {
 
+  const [newPostMsg, setNewPostMsg] = useState('');
+
   const [state, setState] = useState([
     {
       user: 'amyrobson',
@@ -81,6 +83,22 @@ function App() {
     }
   }
 
+  const newPost = (msg) => {
+    const post = {
+      user: YOU.name,
+      date: 'Now',
+      contador: 0,
+      msg: msg,
+      img: YOU.img,
+      replies: [],
+    }
+    let newListado = [...state];
+    if (msg) {
+      newListado.unshift(post);
+      setState(newListado);
+    }
+  }
+
   return (
     <div className='main-app'>
       {state.map(function(user) {
@@ -103,9 +121,12 @@ function App() {
         <div className='photo-reply'>
           <img src={YOU.img} />
         </div>
-        <textarea type='text' className="input-reply" placeholder="Add a comment..."/>
+        <textarea type='text' className="input-reply" placeholder="Add a comment..." onChange={(e) => setNewPostMsg(e.target.value)} value={newPostMsg}/>
         <div className="main-reply-btn">
-          <button type="button" className="btn-reply">SEND</button>
+          <button type="button" className="btn-reply" onClick={() => {
+            newPost(newPostMsg);
+            setNewPostMsg('');
+          }}>SEND</button>
         </div>
       </form>
     </div>
