@@ -7,9 +7,10 @@ import {FaReply} from "react-icons/fa";
 import {FaPen} from "react-icons/fa";
 import {FaTrash} from "react-icons/fa";
 
-export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg}) {
+export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg, newPostReply}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
+    const [msgReply, setMsgReply] = useState('');
     
     return (
         <div className="main replies-child">
@@ -77,9 +78,15 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                 <div className='photo-reply'>
                     <img src={YOUimg} />
                 </div>
-                <textarea type='text' className="input-reply" placeholder="Add a comment..." autoFocus='on'/>
+                <textarea type='text' className="input-reply" placeholder="Add a comment..." autoFocus='on' value={msgReply} onChange={(e) => setMsgReply(e.target.value)}/>
                 <div className="main-reply-btn">
-                  <button type="button" className="btn-reply">REPLY</button>
+                  <button type="button" className="btn-reply" onClick={() => {
+                    if (msgReply) {
+                      newPostReply(2, msgReply, userMsg, userName);
+                      setMsgReply('');
+                      setReplyModalValue(false);
+                    } else return;
+                  }}>REPLY</button>
                   <button type="button" className="btn-cancel" onClick={()=> setReplyModalValue(false)}>Cancel</button>
                 </div>
             </form>

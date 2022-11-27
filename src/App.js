@@ -99,8 +99,8 @@ function App() {
     }
   }
 
-  const newPostReply = (msg, userMsg) => {
-    if (msg) {
+  const newPostReply = (typeNum, msg, userMsg, userName) => {
+    if (msg && typeNum === 1) {
       let index = state.findIndex((user) => user.msg === userMsg);
       let newListado = [...state];
       let newReply = {
@@ -112,7 +112,20 @@ function App() {
       }
       newListado[index].replies.push(newReply);
       setState(newListado);
-    } else return
+    } else if (msg && typeNum === 2) {
+      let index = state.findIndex((user) => user.msg === userMsg);
+      let newListado = [...state];
+      let indexReply = newListado[index].replies.findIndex((user) => user.msg === userName.msg);
+      let newReply = {
+        user: YOU.name,
+        date: 'Now',
+        contador: 0,
+        msg: msg,
+        img: YOU.img,
+      }
+      newListado[index].replies.splice(indexReply - 1, 0, newReply);
+      setState(newListado);
+    } else return;
   }
 
   return (

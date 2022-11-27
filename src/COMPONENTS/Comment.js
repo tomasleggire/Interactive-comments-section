@@ -84,7 +84,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                 <div className="main-reply-btn">
                   <button type="button" className="btn-reply" onClick={() => {
                     if (msgReply) {
-                      newPostReply(msgReply, msg);
+                      newPostReply(1,msgReply, msg);
                       setMsgReply('');
                       setReplyModalValue(false);
                     } else return;
@@ -114,6 +114,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                         Restar={Restar}
                         YOUimg={YOUimg}
                         YOUname={YOUname}
+                        newPostReply={newPostReply}
                     />
                 )
               })}
