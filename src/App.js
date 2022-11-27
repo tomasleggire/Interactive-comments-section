@@ -99,6 +99,22 @@ function App() {
     }
   }
 
+  const newPostReply = (msg, userMsg) => {
+    if (msg) {
+      let index = state.findIndex((user) => user.msg === userMsg);
+      let newListado = [...state];
+      let newReply = {
+        user: YOU.name,
+        date: 'Now',
+        contador: 0,
+        msg: msg,
+        img: YOU.img,
+      }
+      newListado[index].replies.push(newReply);
+      setState(newListado);
+    } else return
+  }
+
   return (
     <div className='main-app'>
       {state.map(function(user) {
@@ -114,6 +130,7 @@ function App() {
             replies={user.replies}
             Sumar={Sumar}
             Restar={Restar}
+            newPostReply={newPostReply}
           />
         )
       })}

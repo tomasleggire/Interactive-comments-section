@@ -12,7 +12,6 @@
     justify-content: center;
     background-color: rgb(239, 240, 235);
     border-radius: 10px;
-
 }
 
 .main-comment-contador {
@@ -265,6 +264,7 @@
 
 .replies-main {
     display: flex;
+    width: 100%;
 }
 
 .replies-main-bar {
@@ -279,6 +279,10 @@
     width: 3px;
     height: auto;
     background-color: lightgray;
+}
+
+.replies-main-list {
+    width: 100%;
 }
 
 .new-post {
