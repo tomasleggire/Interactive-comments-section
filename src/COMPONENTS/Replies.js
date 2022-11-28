@@ -6,11 +6,13 @@ import {FaMinus} from "react-icons/fa";
 import {FaReply} from "react-icons/fa";
 import {FaPen} from "react-icons/fa";
 import {FaTrash} from "react-icons/fa";
+import DeleteModal from "./DeleteModal";
 
-export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg, newPostReply}) {
+export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg, newPostReply, deletePost}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
     const [msgReply, setMsgReply] = useState('');
+    const [deleteModalValue, setDeleteModalValue] = useState(false);
     
     return (
         <div className="main replies-child">

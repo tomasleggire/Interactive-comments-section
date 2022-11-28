@@ -123,9 +123,13 @@ function App() {
         msg: msg,
         img: YOU.img,
       }
-      newListado[index].replies.splice(indexReply - 1, 0, newReply);
+      newListado[index].replies.splice(indexReply + 1, 0, newReply);
       setState(newListado);
     } else return;
+  }
+
+  const deletePost = () => {
+
   }
 
   return (
@@ -144,6 +148,7 @@ function App() {
             Sumar={Sumar}
             Restar={Restar}
             newPostReply={newPostReply}
+            deletePost={deletePost}
           />
         )
       })}

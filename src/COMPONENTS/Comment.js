@@ -6,12 +6,14 @@ import {FaReply} from "react-icons/fa";
 import {FaPen} from "react-icons/fa";
 import {FaTrash} from "react-icons/fa";
 import Replies from "./Replies";
+import DeleteModal from "./DeleteModal";
 
 
-export default function Comment({YOUname, YOUimg, user, date, contador, msg, img, replies, Sumar, Restar, newPostReply}) {
+export default function Comment({YOUname, YOUimg, user, date, contador, msg, img, replies, Sumar, Restar, newPostReply, deletePost}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
     const [msgReply, setMsgReply] = useState('');
+    const [deleteModalValue, setDeleteModalValue] = useState(false);
 
 
     return (
@@ -54,7 +56,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                     (<div className="desktop you-btn-main desktop-you">
                         <div className="you-btn btn-delete">
                             <FaTrash className="reply-icon"/>
-                            <p className="reply-p">Delete</p>
+                            <p className="reply-p" onClick={() => setDeleteModalValue(true)}>Delete</p>
                         </div>
                         <div className="you-btn btn-edit">
                             <FaPen className="reply-icon"/>
@@ -115,12 +117,16 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                         YOUimg={YOUimg}
                         YOUname={YOUname}
                         newPostReply={newPostReply}
+                        deletePost={deletePost}
                     />
                 )
               })}
             </div>
           </div>
         )}
+
+        {!!deleteModalValue && <DeleteModal setDeleteModalValue={setDeleteModalValue}/>}
+
         </div>
     )
 }
