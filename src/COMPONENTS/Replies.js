@@ -33,7 +33,7 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                     <div className="desktop you-btn-main mobile-you">
                     <div className="you-btn btn-delete">
                         <FaTrash className="reply-icon"/>
-                        <p className="reply-p">Delete</p>
+                        <p className="reply-p" onClick={() => setDeleteModalValue(true)}>Delete</p>
                     </div>
                     <div className="you-btn btn-edit">
                         <FaPen className="reply-icon"/>
@@ -54,7 +54,7 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                     (<div className="desktop you-btn-main desktop-you">
                         <div className="you-btn btn-delete">
                             <FaTrash className="reply-icon"/>
-                            <p className="reply-p">Delete</p>
+                            <p className="reply-p" onClick={() => setDeleteModalValue(true)}>Delete</p>
                         </div>
                         <div className="you-btn btn-edit">
                             <FaPen className="reply-icon"/>
@@ -93,6 +93,9 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                 </div>
             </form>
         )}
+
+        {!!deleteModalValue && <DeleteModal setDeleteModalValue={setDeleteModalValue}/>}
+
         </div>
     )
 }
