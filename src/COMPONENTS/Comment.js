@@ -15,6 +15,10 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
     const [msgReply, setMsgReply] = useState('');
     const [deleteModalValue, setDeleteModalValue] = useState(false);
 
+    const deleteConfirmation = () => {
+        deletePost(1, msg);
+        setDeleteModalValue(false);
+    }
 
     return (
         <div className="main">
@@ -125,7 +129,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
           </div>
         )}
 
-        {!!deleteModalValue && <DeleteModal setDeleteModalValue={setDeleteModalValue}/>}
+        {!!deleteModalValue && <DeleteModal setDeleteModalValue={setDeleteModalValue} deleteConfirmation={deleteConfirmation}/>}
 
         </div>
     )
