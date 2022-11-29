@@ -128,14 +128,18 @@ function App() {
     } else return;
   }
 
-  const deletePost = (typeNum, userMsg) => {
+  const deletePost = (typeNum, msg, userMsg) => {
     if (typeNum === 1) {
-      let index = state.findIndex((user) => user.msg === userMsg);
+      let index = state.findIndex((user) => user.msg === msg);
       let newListado = [...state];
       newListado.splice(index, 1);
       setState(newListado);
     } else {
-      console.log('pito');
+      let index = state.findIndex((user) => user.msg === userMsg);
+      let newListado = [...state];
+      let indexReply = newListado[index].replies.findIndex((user) => user.msg === msg);
+      newListado[index].replies.splice(indexReply, 1);
+      setState(newListado);
     }
   }
 

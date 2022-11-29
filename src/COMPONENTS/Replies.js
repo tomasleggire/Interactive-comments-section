@@ -13,6 +13,11 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
     const [replyModalValue, setReplyModalValue] = useState(false);
     const [msgReply, setMsgReply] = useState('');
     const [deleteModalValue, setDeleteModalValue] = useState(false);
+
+    const deleteConfirmation = () => {
+        deletePost(2, msg, userMsg);
+        setDeleteModalValue(false);
+    }
     
     return (
         <div className="main replies-child">
@@ -94,7 +99,7 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
             </form>
         )}
 
-        {!!deleteModalValue && <DeleteModal setDeleteModalValue={setDeleteModalValue}/>}
+        {!!deleteModalValue && <DeleteModal setDeleteModalValue={setDeleteModalValue} deleteConfirmation={deleteConfirmation}/>}
 
         </div>
     )
