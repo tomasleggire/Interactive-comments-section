@@ -9,11 +9,14 @@ import Replies from "./Replies";
 import DeleteModal from "./DeleteModal";
 
 
-export default function Comment({YOUname, YOUimg, user, date, contador, msg, img, replies, Sumar, Restar, newPostReply, deletePost}) {
+export default function Comment({YOUname, YOUimg, user, date, contador, msg, img, replies, Sumar, Restar, newPostReply, deletePost, editPost}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
     const [msgReply, setMsgReply] = useState('');
     const [deleteModalValue, setDeleteModalValue] = useState(false);
+
+    const [editModalValue, setEditModalValue] = useState(false);
+    const [editMsgValue, setEditMsgValue] = useState(msg);
 
     const deleteConfirmation = () => {
         deletePost(1, msg);
@@ -43,7 +46,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                     </div>
                     <div className="you-btn btn-edit">
                         <FaPen className="reply-icon"/>
-                        <p className="reply-p">Edit</p>
+                        <p className="reply-p" onClick={() => setEditModalValue(true)}>Edit</p>
                     </div>
                 </div>
                 )}
@@ -64,7 +67,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                         </div>
                         <div className="you-btn btn-edit">
                             <FaPen className="reply-icon"/>
-                            <p className="reply-p">Edit</p>
+                            <p className="reply-p" onClick={() => setEditModalValue(true)}>Edit</p>
                         </div>
                     </div>
                     ) 
@@ -76,8 +79,26 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                     }
                 </div>
                 <div className="main-comment-info-msg">
-                    <p className="msg">{msg}</p>
+                    {editModalValue ? (
+                        <textarea autoFocus='true' value={editMsgValue} className='msg-text' onChange={(e) => setEditMsgValue(e.target.value)}></textarea>
+                    ) : (
+                        <p className="msg">{msg}</p>
+                    )}
                 </div>
+                {!!editModalValue && (
+                    <div className="edit-btn-main">
+                        <button className="edit-btn edit-btn-update" onClick={() => {
+                            if (editMsgValue) {
+                              editPost(1, editMsgValue, msg);
+                              setEditModalValue(false);
+                            }
+                        }}>UPDATE</button>
+                        <button className="edit-btn edit-btn-cancel" onClick={() => {
+                            setEditModalValue(false);
+                            setEditMsgValue(msg);
+                        }}>Cancel</button>
+                    </div>
+                )}
             </div>
         </div>
 

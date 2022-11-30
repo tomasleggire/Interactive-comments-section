@@ -143,6 +143,15 @@ function App() {
     }
   }
 
+  const editPost = (typeNum, newMsg, userMsg) => {
+    if (typeNum === 1) {
+      let index = state.findIndex((user) => user.msg === userMsg);
+      let newListado = [...state];
+      newListado[index].msg = newMsg;
+      setState(newListado);
+    } else return;
+  }
+
   return (
     <div className='main-app'>
       {state.map(function(user) {
@@ -160,6 +169,7 @@ function App() {
             Restar={Restar}
             newPostReply={newPostReply}
             deletePost={deletePost}
+            editPost={editPost}
           />
         )
       })}

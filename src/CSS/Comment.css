@@ -114,6 +114,54 @@
     font-size: 18px;
 }
 
+.msg-text {
+    resize: none;
+    width: 100%;
+    height: 80px;
+    overflow-y: auto;
+    margin-bottom: -15px;
+    font-size: 18px;
+    padding: 3px 5px;
+    line-height: 20px;
+    font-family: inherit;
+}
+
+.edit-btn-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0;
+    margin-bottom: 20px;
+    width: 160px;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.edit-btn-cancel {
+    color: rgb(245, 79, 79);
+}
+
+.edit-btn-cancel:hover {
+    color: rgb(236, 122, 122);
+}
+
+.edit-btn-update {
+    color: rgb(239, 240, 235);
+    background-color: rgb(81, 81, 168);
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.edit-btn-update:hover {
+    background-color: rgb(129, 129, 199);
+    color: rgb(255, 255, 255);
+}
+
 /* COMMENTS MODAL  */
 
 .main-reply {
@@ -221,6 +269,9 @@
     .span-contador {
         margin-bottom: 4px;
     }
+    .user-date {
+        font-size: 12px;
+    }
   }
 
   @media only screen and (max-width: 530px) {
@@ -259,6 +310,9 @@
         margin: 0;
         order: 1;
         margin-right: 18px;
+    }
+    .edit-btn-main {
+        margin-bottom: 30px;
     }
   }
 
