@@ -143,13 +143,19 @@ function App() {
     }
   }
 
-  const editPost = (typeNum, newMsg, userMsg) => {
+  const editPost = (typeNum, newMsg, userMsg, msg) => {
     if (typeNum === 1) {
       let index = state.findIndex((user) => user.msg === userMsg);
       let newListado = [...state];
       newListado[index].msg = newMsg;
       setState(newListado);
-    } else return;
+    } else {
+      let index = state.findIndex((user) => user.msg === msg);
+      let newListado = [...state];
+      let indexReply = newListado[index].replies.findIndex((user) => user.msg === userMsg);
+      newListado[index].replies[indexReply].msg = newMsg;
+      setState(newListado);
+    }
   }
 
   return (

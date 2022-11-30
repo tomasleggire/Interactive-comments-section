@@ -35,7 +35,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                 {!(user === YOUname) && (
                     <div className="user-reply mobile">
                     <FaReply className="reply-icon"/>
-                    <p className="reply-p" onClick={()=> setReplyModalValue(true)}>Reply</p>
+                    <p className="reply-p" onClick={()=> {setReplyModalValue(true)}}>Reply</p>
                     </div>
                 )}
                 {(user === YOUname) && (
@@ -143,6 +143,7 @@ export default function Comment({YOUname, YOUimg, user, date, contador, msg, img
                         YOUname={YOUname}
                         newPostReply={newPostReply}
                         deletePost={deletePost}
+                        editPost={editPost}
                     />
                 )
               })}

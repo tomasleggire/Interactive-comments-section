@@ -8,11 +8,14 @@ import {FaPen} from "react-icons/fa";
 import {FaTrash} from "react-icons/fa";
 import DeleteModal from "./DeleteModal";
 
-export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg, newPostReply, deletePost}) {
+export default function Replies({YOUname, YOUimg, user, date, contador, msg, img, Sumar, Restar, userName, userMsg, newPostReply, deletePost, editPost}) {
 
     const [replyModalValue, setReplyModalValue] = useState(false);
     const [msgReply, setMsgReply] = useState('');
     const [deleteModalValue, setDeleteModalValue] = useState(false);
+
+    const [editModalValue, setEditModalValue] = useState(false);
+    const [editMsgValue, setEditMsgValue] = useState(msg);
 
     const deleteConfirmation = () => {
         deletePost(2, msg, userMsg);
@@ -42,7 +45,10 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                     </div>
                     <div className="you-btn btn-edit">
                         <FaPen className="reply-icon"/>
-                        <p className="reply-p">Edit</p>
+                        <p className="reply-p" onClick={() => {
+                            setEditMsgValue(msg);
+                            setEditModalValue(true);
+                        }}>Edit</p>
                     </div>
                 </div>
                 )}
@@ -63,7 +69,10 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                         </div>
                         <div className="you-btn btn-edit">
                             <FaPen className="reply-icon"/>
-                            <p className="reply-p">Edit</p>
+                            <p className="reply-p" onClick={() => {
+                            setEditMsgValue(msg);
+                            setEditModalValue(true);
+                        }}>Edit</p>
                         </div>
                     </div>
                     ) 
@@ -75,8 +84,26 @@ export default function Replies({YOUname, YOUimg, user, date, contador, msg, img
                     }
                 </div>
                 <div className="main-comment-info-msg">
-                    <p className="msg">{msg}</p>
+                    {editModalValue ? (
+                        <textarea autoFocus='true' value={editMsgValue} className='msg-text' onChange={(e) => setEditMsgValue(e.target.value)}></textarea>
+                    ) : (
+                        <p className="msg">{msg}</p>
+                    )}
                 </div>
+                {!!editModalValue && (
+                    <div className="edit-btn-main">
+                        <button className="edit-btn edit-btn-update" onClick={() => {
+                            if (editMsgValue) {
+                              editPost(2, editMsgValue, msg, userMsg);
+                              setEditModalValue(false);
+                            }
+                        }}>UPDATE</button>
+                        <button className="edit-btn edit-btn-cancel" onClick={() => {
+                            setEditModalValue(false);
+                            setEditMsgValue(msg);
+                        }}>Cancel</button>
+                    </div>
+                )}
             </div>
         </div>
 
