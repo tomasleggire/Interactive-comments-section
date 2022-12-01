@@ -5,7 +5,7 @@ import './CSS/App.css';
 
 function App() {
 
-  const [newPostMsg, setNewPostMsg, YOU, state, setState, Sumar, Restar, newPost, newPostReply, deletePost, editPost] = useComment();
+  const [newPostMsg, setNewPostMsg, YOU, state, Sumar, Restar, newPost, newPostReply, deletePost, editPost] = useComment();
 
   return (
     <div className='main-app'>
